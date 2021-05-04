@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img alt="Ignite" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2fbacb7a-e460-44a3-8fc5-e66f96dae148%2Fcover-reactjs.png?table=block&id=57692167-7879-4019-a83f-544e79167b12&width=2560&userId=ea77c6a2-2649-4d12-bc25-b4ef60ba5ead&cache=v2" />
 
-## Getting Started
+<h1 align="center">ig.news - aplicação de assinatura de conteúdo 👋</h1>
 
-First, run the development server:
+<p> 🚀 Aplicação de assinatura de conteúdo desenvolvida durante a aula de Fundamentos do Next do Ignite.</p>
+
+## Features
+
+- [x] Autenticação pelo GitHub;
+- [ ] Inscrição/assinatura para consumir conteúdo;
+- [ ] Listagem de posts cujo conteúdo só pode ser acessado integralmente por assinantes.
+
+## 🛠 Tecnologias
+
+As seguintes tecnologias foram utilizadas na construção deste projeto:
+
+- [React](https://pt-br.reactjs.org/)
+- [NextJS](https://nextjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [SASS](https://sass-lang.com/)
+
+Além disso, a aplicação também foi conectada a alguns serviços externos:
+
+- [STRIPE](https://stripe.com/br) - Serviço de pagamentos;
+- [FAUNADB](https://fauna.com/) - Banco de dados focado em aplicações Serverless;
+- [Prismic CMS](https://prismic.io/)
+
+## 🚀 Como executar o projeto
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js][nodejs].
+Além disto é bom ter um editor para trabalhar com o código como [VSCode][vscode]
+
+### 🧭 Rodando a aplicação web
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clone este repositório
+$ git clone https://github.com/brunaschneiders/ignite-reactjs-ignews.git
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd ignite-reactjs-ignews
+
+# Instale as dependências
+$ yarn install
+
+# Execute a aplicação em modo de desenvolvimento
+$ yarn dev
+
+# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Autor
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+👤 **Bruna Schneiders**
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Github: [@brunaschneiders](https://github.com/brunaschneiders)
+- LinkedIn: [@bruna-schneiders](https://linkedin.com/in/bruna-schneiders)
