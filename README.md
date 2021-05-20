@@ -2,13 +2,21 @@
 
 <h1 align="center">ig.news - aplicação de assinatura de conteúdo 👋</h1>
 
+<p align="center"><b>Status: Em construção 🚧</b></p>
+
 <p> 🚀 Aplicação de assinatura de conteúdo desenvolvida durante a aula de Fundamentos do Next do Ignite.</p>
 
 ## Features
 
 - [x] Autenticação pelo GitHub;
-- [ ] Inscrição/assinatura para consumir conteúdo;
-- [ ] Listagem de posts cujo conteúdo só pode ser acessado integralmente por assinantes.
+- [x] Inscrição/assinatura para consumir conteúdo;
+- [x] Listagem de posts cujo conteúdo só pode ser acessado integralmente por assinantes.
+- [ ] Visualização do post completo
+- Autenticação pelo GitHub
+  ![](authentication.gif)
+
+- Inscrição/assinatura para consumir conteúdo e listagem de posts;
+  ![](subscription.gif)
 
 ## 🛠 Tecnologias
 
