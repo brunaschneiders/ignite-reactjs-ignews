@@ -1,4 +1,5 @@
 import { signIn, useSession } from "next-auth/client";
+import { useRouter } from "next/router";
 import { api } from "../../services/api";
 import { getStripeJs } from "../../services/stripe-js";
 import styles from "./styles.module.scss";
@@ -9,6 +10,7 @@ interface SubscribeButtonProps {
 
 export function SubscribeButton({ priceId }: SubscribeButtonProps) {
   const [session] = useSession();
+  const router = useRouter();
 
   async function handleSubscribe() {
     if (!session) {
@@ -16,8 +18,14 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
       return;
     }
 
-    //criação da checkout session
+    // se já houver uma assinatura ativa, não deve ser criada uma nova
+    if (session.activeSubscription) {
+      // sempre que for necessário redirecionar o usuário de forma programática (por função), e não por botão, o useRouter deve ser utilizado
+      router.push("/posts");
+      return;
+    }
 
+    //criação da checkout session
     try {
       // o nome da rota é sempre o nome do arquivo
       const response = await api.post("/subscribe");
