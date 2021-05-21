@@ -41,7 +41,17 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
   const session = await getSession({ req });
   const { slug } = params;
-  // if(!session)
+
+  if (!session?.activeSubscription) {
+    return {
+      redirect: {
+        destination: "/",
+        //   o redirecionamento não é permanente, ou seja, estou redirecionando-o porque ele não tem assinatura ativa ou nao está logado, mas isso não é permamente
+        //    isso ajuda os indexadores a entenderem que o redirecionamento está acontecendo por uma falta de permissão e não por a página nao existir mais ou algo do tipo
+        permanent: false,
+      },
+    };
+  }
 
   const prismic = getPrismicClient(req);
 

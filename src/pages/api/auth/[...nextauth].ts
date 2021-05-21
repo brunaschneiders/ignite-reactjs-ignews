@@ -1,6 +1,7 @@
 import { query as q } from "faunadb";
 
 import NextAuth from "next-auth";
+import { session } from "next-auth/client";
 import Providers from "next-auth/providers";
 
 import { fauna } from "../../../services/fauna";
@@ -17,6 +18,39 @@ export default NextAuth({
   ],
 
   callbacks: {
+    // esse callback permite modificar/acrescentar dados dentro de session.
+    async session(session) {
+      try {
+        // busca a informação sobre o usuário ter inscrição ou não
+        const userActiveSubscription = await fauna.query(
+          q.Get(
+            // busca a informação que bate com os dois matchs (interesecção)
+            q.Intersection([
+              q.Match(
+                q.Index("subscription_by_user_ref"),
+                // seleciona a ref do usuário que bate com o índice 'user_by_email'
+                q.Select(
+                  "ref",
+                  q.Get(
+                    q.Match(
+                      q.Index("user_by_email"),
+                      q.Casefold(session.user.email)
+                    )
+                  )
+                )
+              ),
+              // busca uma subscription ativa
+              q.Match(q.Index("subscription_by_status"), "active"),
+            ])
+          )
+        );
+
+        return { ...session, activeSubscription: userActiveSubscription };
+      } catch (error) {
+        return { ...session, activeSubscription: null };
+      }
+    },
+
     async signIn(user, account, profile) {
       const { email } = user;
 
