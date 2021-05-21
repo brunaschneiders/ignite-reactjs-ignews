@@ -8,7 +8,7 @@
 
 <p> 🚀 Aplicação de assinatura de conteúdo desenvolvida durante a aula de Fundamentos do Next do Ignite.</p>
 
-## Features
+## 🔝 Features
 
 - [x] Autenticação pelo GitHub;
 - [x] Inscrição/assinatura para consumir conteúdo;
