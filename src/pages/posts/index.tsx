@@ -55,6 +55,7 @@ export const getStaticProps: GetStaticProps = async () => {
       pageSize: 100,
     }
   );
+  console.log(JSON.stringify(response.results[0].data, null, 2));
 
   // formatar os dados logo que trazidos da API, melhora o processamento da aplicação, uma vez que esta não precisará ser feita em tempo de execução do código.
   const posts = response.results.map(post => {
