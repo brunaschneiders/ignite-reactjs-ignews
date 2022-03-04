@@ -31,6 +31,7 @@ As seguintes tecnologias foram utilizadas na construção deste projeto:
 - [NextJS](https://nextjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [SASS](https://sass-lang.com/)
+- [Testing Library](https://testing-library.com/)
 
 Além disso, a aplicação também foi conectada a alguns serviços externos:
 
