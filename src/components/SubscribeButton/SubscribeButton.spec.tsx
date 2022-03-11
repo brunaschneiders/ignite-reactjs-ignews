@@ -14,9 +14,9 @@ describe("SubscribeButton component", () => {
 
     useSessionMocked.mockReturnValueOnce([null, false]);
 
-    screen.logTestingPlaygroundURL();
-
     render(<SubscribeButton />);
+
+    screen.logTestingPlaygroundURL();
 
     expect(screen.getByText("Subscribe now")).toBeInTheDocument();
   });
